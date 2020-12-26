@@ -33,6 +33,10 @@ body {
 	line-height: 1;
 }
 
+div.edu {
+	margin-bottom: 5em;
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -217,6 +221,10 @@ input, select, textarea {
 	h2 {
 		font-size: 1.5em;
 	}
+
+		h2.left {
+			text-align: left;
+		}
 
 	h3 {
 		font-size: 1.25em;
@@ -2387,7 +2395,7 @@ input, select, textarea {
 		}
 
 		.image.left, .image.right {
-			max-width: 40%;
+			max-width: 20%;
 		}
 
 			.image.left img, .image.right img {
@@ -3084,7 +3092,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 5em 5em 1em 5em ;
+		padding-top: 3em;
 		text-align: center;
 	}
 

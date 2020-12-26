@@ -18,7 +18,7 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header" class="alt">
+					<header id="header">
 						<!-- <span class="logo"><img src="images/logo.svg" alt="" /></span>
 						<h1>Stellar</h1>
 						<p>Just another free, fully responsive site template<br />
@@ -45,11 +45,9 @@
 										<header class="major">
 											<h2>Ian Argyle</h2>
 										</header>
-										<p>I'm a highly motivated undergraduate student studying CS at the University of Utah. I have lots of hands on experience fromo both person projects and school projects. I am seeking an internship where I can apply my experience to important and interesting problems.</p>
+										<p>I'm a highly motivated undergraduate student studying CS at the University of Utah. I have lots of hands on experience from both personal and school projects. I love solving challenging problems creatively and efficiently. I am currently seeking an internship for summer 2021 where I can apply my experience to important and interesting problems. Check out some of my projects below and feel free to contact me.</p>
 										<p>ianargyle@outlook.com</p>
-										<ul class="actions">
-											<li><a href="#first" class="button">View my work</a></li>
-										</ul>
+										<a href="#first" class="button">View my work</a>
 									</div>
 									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
 								</div>
@@ -65,7 +63,7 @@
 									<li>
 										<div class="box">
 											<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>
-											<h3>Car Search and Price Comparison</h3>
+											<h3>Automotive Search and Price Comparison</h3>
 											<p class="light">Node.js, Python, Flask, HTML</p>
 											<a href="#" class="button primary small">Live Demo</a>
 											<a href="#" class="button small stacked">GitHub</a>
@@ -93,53 +91,59 @@
 						<!-- Second Section -->
 							<section id="second" class="main special">
 								<header class="major">
-									<h2>Ipsum consequat</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+									<h2>Education</h2>
 								</header>
-								<ul class="statistics">
-									<li class="style1">
-										<span class="icon solid fa-code-branch"></span>
-										<strong>5,120</strong> Etiam
-									</li>
-									<li class="style2">
-										<span class="icon fa-folder-open"></span>
-										<strong>8,192</strong> Magna
-									</li>
-									<li class="style3">
-										<span class="icon solid fa-signal"></span>
-										<strong>2,048</strong> Tempus
-									</li>
-									<li class="style4">
-										<span class="icon solid fa-laptop"></span>
-										<strong>4,096</strong> Aliquam
-									</li>
-									<li class="style5">
-										<span class="icon fa-gem"></span>
-										<strong>1,024</strong> Nullam
-									</li>
-								</ul>
-								<p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
+								<div class="edu">
+									<span class="image left"><img src="images/uofu.png" alt="" /></span>
+									<h2 class="left">BS Computer Science</h2>
+									<p class="content">University of Utah<br/>
+										8/2018 - 3/2022<br/>
+										Salt Lake City, UT <br/>
+										Relevant Courses: Algorithms and Data Structures, Software Practice I & II, Linear Algebra, Discreet Structures, Computer Organization, Calculus I, II, and III<br/>
+										Spring 2021 Relevant Courses: Algorithms (CS4150), Computer Vision, Computer Security
+									</p>
+								</div>
+								<div class="edu">
+									<span class="image left"><img src="images/wsu.png" alt="" /></span>
+									<h2 class="left">Associate of Science</h2>
+									<p class="content">Weber State University<br/>
+										8/2015 - 3/2018<br/>
+										Odgen, UT<br/>
+										Graduated with honors before graduating high school.
+									</p>
+								</div>
+								<div class="edu" style="margin-bottom:7em;">
+									<span class="image left"><img src="images/nuames.png" alt="" /></span>
+									<h2 class="left">High School Diploma</h2>
+									<p class="content">Northern Utah Academy for Math, Engineering, and Science<br/>
+										8/2015 - 3/2018<br/>
+										Layton, UT<br/>
+										Participated in yearly CyberPatriot competitions, recieved numerious certificates for programming.
+									</p>
+								</div>
 							</section>
 
 						<!-- Get Started -->
 							<section id="cta" class="main special">
 								<header class="major">
-									<h2>Congue imperdiet</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+									<h2>Contact Me</h2>
 								</header>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button primary">Get Started</a></li>
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
+								<form id="contact-form" style="text-align: left;">
+									<label for="fname">Name</label>
+									<input type="text" name="fname" style="margin-bottom: 2em;">
+									<label for="email">Email *</label>
+									<input type="text" name="email" style="margin-bottom: 2em;">
+									<label for="message">Message *</label>
+									<textarea name="message" id="message"></textarea><br>
+									<input type="button" onclick="sendMessage()" value="Submit">
+								</form>
+								<script>
+									function sendMessage() {
+										const xhttp = new XMLHttpRequest();
+										xhttp.open("POST", "https://iantim500-eval-test.apigee.net/score/grade?" + $('#resume-form').serialize(), true);
+										xhttp.send();
+									}
+								</script>
 							</section>
 
 					</div>
