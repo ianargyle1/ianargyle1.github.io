@@ -193,6 +193,10 @@ input, select, textarea {
 			text-align: justify;
 		}
 
+		p.light {
+			margin: 0 0 1em 0;
+		}
+
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
 		line-height: 1.5;
@@ -1904,6 +1908,14 @@ input, select, textarea {
 		.button:disabled {
 			pointer-events: none;
 			opacity: 0.25;
+		}
+
+		input[type="submit"].stacked,
+		input[type="reset"].stacked,
+		input[type="button"].stacked,
+		button.stacked,
+		.button.stacked {
+			margin-top: 1em;
 		}
 
 		@media screen and (max-width: 736px) {

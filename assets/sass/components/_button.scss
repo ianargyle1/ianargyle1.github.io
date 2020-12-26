@@ -49,6 +49,10 @@
 			font-size: 1.35em;
 		}
 
+		&.stacked {
+			margin-top: 1em;
+		}
+
 		&.disabled,
 		&:disabled {
 			@include vendor('pointer-events', 'none');
