@@ -169,10 +169,14 @@
 										// 	return;
 										// }
 
-										// var name = $("#fname").val();
-										// var email = $("#email").val();
-										// var message = $("#message").val();
-										var data = $('#contact-form').serialize()
+										var name = $("#fname").val();
+										var email = $("#email").val();
+										var message = $("#message").val();
+										var data = {
+											name : name,
+											email : email,
+											message : message
+										};
 
 										$.ajax({
 										type: "POST",
