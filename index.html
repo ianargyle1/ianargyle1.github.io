@@ -6,11 +6,72 @@
 -->
 <html>
 	<head>
-		<title>Stellar by HTML5 UP</title>
+		<title>Ian Argyle</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+			// function sendMessage() {
+			// 	const xhttp = new XMLHttpRequest();
+			// 	xhttp.open("POST", "https://cvwoxzc66d.execute-api.us-east-2.amazonaws.com/send-message?" + $('#contact-form').serialize(), false);
+			// 	xhttp.send();
+			// }
+			function sendMessage(e) {
+				e.preventDefault();
+				var URL = "https://cvwoxzc66d.execute-api.us-east-2.amazonaws.com/send-message";
+
+				// var Namere = /[A-Za-z]{1}[A-Za-z]/;
+				// if (!Namere.test($("#name-input").val())) {
+				// 	alert ("Name can not less than 2 char");
+				// 	return;
+				// }
+				// var mobilere = /[0-9]{10}/;
+				// if (!mobilere.test($("#phone-input").val())) {
+				// 	alert ("Please enter valid mobile number");
+				// 	return;
+				// }
+				// if ($("#email-input").val()=="") {
+				// 	alert ("Please enter your email id");
+				// 	return;
+				// }
+
+				// var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+				// if (!reeamil.test($("#email-input").val())) {
+				// 	alert ("Please enter valid email address");
+				// 	return;
+				// }
+
+				var name = $("#fname").val();
+				var email = $("#email").val();
+				var message = $("#message").val();
+				var data = {
+					name : name,
+					email : email,
+					message : message
+				};
+
+				$.ajax({
+				type: "POST",
+				url : "https://cvwoxzc66d.execute-api.us-east-2.amazonaws.com/send-message",
+				dataType: "json",
+				crossDomain: "true",
+				contentType: "application/json; charset=utf-8",
+				data: JSON.stringify(data),
+
+
+				success: function () {
+					// clear form and show a success message
+					alert("Successfull");
+					document.getElementById("contact-form").reset();
+					location.reload();
+				},
+				error: function () {
+					// show an error message
+					alert("UnSuccessfull");
+				}});
+			}
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -135,70 +196,9 @@
 									<input type="text" name="email" id="email" style="margin-bottom: 2em;">
 									<label for="message">Message *</label>
 									<textarea name="message" id="message"></textarea><br>
-									<!-- <input type="submit" onclick="sendMessage(event)" value="Submit"> -->
-									<button type="submit" onClick="sendMessage(event)">Submit</button>
+									<!-- <input type="submit" onclick="sendMessage()" value="Submit"> -->
+									<button type="button" onclick="sendMessage(event)">Submit</button>
 								</form>
-								<script>
-									// function sendMessage() {
-									// 	const xhttp = new XMLHttpRequest();
-									// 	xhttp.open("POST", "https://cvwoxzc66d.execute-api.us-east-2.amazonaws.com/send-message?" + $('#contact-form').serialize(), true);
-									// 	xhttp.send();
-									// }
-									function sendMessage(e) {
-										e.preventDefault();
-										var URL = "https://cvwoxzc66d.execute-api.us-east-2.amazonaws.com/send-message";
-
-										// var Namere = /[A-Za-z]{1}[A-Za-z]/;
-										// if (!Namere.test($("#name-input").val())) {
-										// 	alert ("Name can not less than 2 char");
-										// 	return;
-										// }
-										// var mobilere = /[0-9]{10}/;
-										// if (!mobilere.test($("#phone-input").val())) {
-										// 	alert ("Please enter valid mobile number");
-										// 	return;
-										// }
-										// if ($("#email-input").val()=="") {
-										// 	alert ("Please enter your email id");
-										// 	return;
-										// }
-
-										// var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-										// if (!reeamil.test($("#email-input").val())) {
-										// 	alert ("Please enter valid email address");
-										// 	return;
-										// }
-
-										var name = $("#fname").val();
-										var email = $("#email").val();
-										var message = $("#message").val();
-										var data = {
-											name : name,
-											email : email,
-											message : message
-										};
-
-										$.ajax({
-										type: "POST",
-										url : "https://cvwoxzc66d.execute-api.us-east-2.amazonaws.com/send-message",
-										dataType: "json",
-										crossDomain: "true",
-										contentType: "application/json; charset=utf-8",
-										data: "{name: \"" + name + "\", email: \"" + email + "\", message: \"" + message + "\"}",
-
-
-										success: function () {
-											// clear form and show a success message
-											alert("Successfull");
-											document.getElementById("contact-form").reset();
-											location.reload();
-										},
-										error: function () {
-											// show an error message
-											alert("UnSuccessfull");
-										}});
-									}
-								</script>
 							</section>
 
 					</div>
