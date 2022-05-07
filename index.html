@@ -118,21 +118,23 @@
 							</section>
 
 						<!-- Projects Section -->
-							<section id="projects" class="main special">
+							<section id="projects" class="main special" style="padding-bottom: 0">
 								<header class="major">
 									<h2>Projects</h2>
 								</header>
-								<p>Please see GitHub readme files for detailed explinations of the structure and purpose of each of the projects below.</p>
-								<nav>
-									<ul>
-										<li><a data-proj-type="all" onclick="setProjType(this)" class="active" id="proj-default">All</a></li>
-										<li><a data-proj-type="ml" onclick="setProjType(this)">Machine Learning</a></li>
-										<li><a data-proj-type="web" onclick="setProjType(this)">Web Development</a></li>
-										<li><a data-proj-type="game" onclick="setProjType(this)">Games</a></li>
-										<li><a data-proj-type="other" onclick="setProjType(this)">Other</a></li>
-									</ul>
-								</nav>
-								<ul class="features" id="projects">
+								<p>Please see GitHub readme files for detailed explinations of the structure and purpose of each of the projects below. Use the selector below to filter project by type.</p>
+							</section>
+							<nav id="nav">
+								<ul>
+									<li><a data-proj-type="all" onclick="setProjType(this)" class="active" id="proj-default">All</a></li>
+									<li><a data-proj-type="ml" onclick="setProjType(this)">Machine Learning</a></li>
+									<li><a data-proj-type="web" onclick="setProjType(this)">Web Development</a></li>
+									<li><a data-proj-type="game" onclick="setProjType(this)">Games</a></li>
+									<li><a data-proj-type="other" onclick="setProjType(this)">Other</a></li>
+								</ul>
+							</nav>
+							<section class="main special">
+								<ul class="features" id="project-list">
 									<li data-proj-type="web,ml">
 										<div class="box">
 											<span class="image fit"><img src="images/social_butterfly.png" alt="" /></span>
