@@ -56,6 +56,19 @@
 					alert("Error, please contact me via email");
 				}});
 			}
+			
+			function setProjType(e) {
+				const ptype = e.getAttribute('data-proj-type');
+				
+				const projects = document.getElementById('projects');
+				for (var proj in projects) {
+					if (ptype == 'all' || proj.getAttribute('data-proj-type').split(',').includes(ptype)) {
+						proj.style.display = 'block'
+					} else {
+						proj.style.display = 'none'
+					}
+				}
+			}
 		</script>
 	</head>
 	<body class="is-preload">
@@ -102,8 +115,14 @@
 									<h2>Projects</h2>
 								</header>
 								<p>Please see GitHub readme files for detailed explinations of the structure and purpose of each of the projects below.</p>
-								<ul class="features">
-									<li>
+								<ul>
+									<li><a data-proj-type="all" onClick="setProjType" class="active">All</a></li>
+									<li><a data-proj-type="ml" onClick="setProjType">Machine Learning</a></li>
+									<li><a data-proj-type="web" onClick="setProjType">Web Development</a></li>
+									<li><a data-proj-type="game" onClick="setProjType">Games</a></li>
+								</ul>
+								<ul class="features" id="projects">
+									<li data-proj-type="web,ml">
 										<div class="box">
 											<span class="image fit"><img src="images/logo_icon.png" alt="" /></span>
 											<h3>Social Butterfly</h3>
@@ -111,7 +130,7 @@
 											<a href="http://aisocialbutterfly.com/" target="_blank" class="button primary small">Live Demo</a>
 										</div>
 									</li>
-									<li>
+									<li data-proj-type="web">
 										<div class="box">
 											<span class="image fit"><img src="images/scribeo_logo.jpg" alt="" /></span>
 											<h3>Scribeo</h3>
@@ -119,7 +138,7 @@
 											<a href="https://scribeoai.com/" target="_blank" class="button primary small">Live Demo</a>
 										</div>
 									</li>
-									<li>
+									<li data-proj-type="web">
 										<div class="box">
 											<span class="image fit"><img src="images/autosearch.PNG" alt="" /></span>
 											<h3>Automotive Search</h3>
@@ -128,7 +147,7 @@
 											<a href="https://github.com/ianargyle1/AutomotiveSearch" target="_blank" class="button small stacked">GitHub</a>
 										</div>
 									</li>
-									<li>
+									<li data-proj-type="game">
 										<div class="box">
 											<span class="image fit"><img src="images/agario.PNG" alt="" /></span>
 											<h3>Agario Game</h3>
@@ -136,7 +155,7 @@
 											<a href="https://github.com/ianargyle1/AgarioGame" target="_blank" class="button small stacked">GitHub</a>
 										</div>
 									</li>
-									<li>
+									<li data-proj-type="algorithms">
 										<div class="box">
 											<span class="image fit"><img src="images/grammar_example.PNG" alt="" /></span>
 											<h3>Random Phrase Graph</h3>
@@ -144,7 +163,7 @@
 											<a href="https://github.com/ianargyle1/RandomPhraseGraph" target="_blank" class="button small stacked">GitHub</a>
 										</div>
 									</li>
-									<li>
+									<li data-proj-type="game">
 										<div class="box">
 											<span class="image fit"><img src="images/asteroids.PNG" alt="" /></span>
 											<h3>Asteroids Game</h3>
