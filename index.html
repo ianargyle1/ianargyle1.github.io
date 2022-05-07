@@ -57,15 +57,23 @@
 				}});
 			}
 			
+			var active = null;
 			function setProjType(e) {
 				const ptype = e.getAttribute('data-proj-type');
 				
-				const projects = document.getElementById('projects');
-				for (var proj in projects) {
-					if (ptype == 'all' || proj.getAttribute('data-proj-type').split(',').includes(ptype)) {
-						proj.style.display = 'block'
+				if (active) {
+					active.classList.remove("active");
+				} else {
+					document.getElementById('proj-default').classList.remove("active");
+				}
+				e.classList.add("active");
+				active = e;
+				const projects = document.getElementById('project-list');
+				for (var i = 0; i < projects.children.length; i++) {
+					if (ptype == 'all' || projects.children[i].getAttribute('data-proj-type').split(',').includes(ptype)) {
+						projects.children[i].style.display = 'block'
 					} else {
-						proj.style.display = 'none'
+						projects.children[i].style.display = 'none'
 					}
 				}
 			}
@@ -117,11 +125,11 @@
 								<p>Please see GitHub readme files for detailed explinations of the structure and purpose of each of the projects below.</p>
 								<nav>
 									<ul>
-										<li><a data-proj-type="all" onclick="setProjType" class="active">All</a></li>
-										<li><a data-proj-type="ml" onclick="setProjType">Machine Learning</a></li>
-										<li><a data-proj-type="web" onclick="setProjType">Web Development</a></li>
-										<li><a data-proj-type="game" onclick="setProjType">Games</a></li>
-										<li><a data-proj-type="other" onclick="setProjType">Other</a></li>
+										<li><a data-proj-type="all" onclick="setProjType(this)" class="active" id="proj-default">All</a></li>
+										<li><a data-proj-type="ml" onclick="setProjType(this)">Machine Learning</a></li>
+										<li><a data-proj-type="web" onclick="setProjType(this)">Web Development</a></li>
+										<li><a data-proj-type="game" onclick="setProjType(this)">Games</a></li>
+										<li><a data-proj-type="other" onclick="setProjType(this)">Other</a></li>
 									</ul>
 								</nav>
 								<ul class="features" id="projects">
